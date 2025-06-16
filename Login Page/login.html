@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="login.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7ab9b9ccff.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="AfriDesign-login">
+        <div class="logo-login">
+            <img src="/Login Page/Assets/Images/1fe81118f1b2adb4ca4940e9baed53366ee29a08.png" alt="AfriDesign Logo" height="306.98px" width="288.23px">
+            <h1>Afristyle</h1>
+        </div>
+
+        <div class="details-login">
+            <div class="details-login-content">
+                 <div class="heading">
+                    <h2>Welcome to Afristyle</h2>
+                    <p class="sub-heading">Enter your details below to proceed further.</p>
+                </div>
+
+                <form id="loginForm">
+                    <label for="name">Email address</label><br>
+                    <input type="email" id="email" name="email" placeholder="youremail@gmail.com" required><br>
+                    <p id="emailError" class="error-message"></p><br>
+
+                    <label for="name">Password</label><br>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" placeholder="***********" required>
+                         <i class="fa-regular fa-eye-slash" id="togglePassword"></i>
+                    </div>
+                    <p id="passwordError" class="error-message"></p>
+                    <p id="generalError" class="error-message"></p>
+                    <p class="forget-password"><a href="/FORGET-PASSWORD/index.html">Forget Password?</a></p>
+
+                    <button type="submit" class="btn">Log In</button>
+                </form>
+
+            </div>
+        </div>
+    </main>
+<script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+@import url('https://fonts.cdnfonts.com/css/alkalami');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-logo: "Alkalami", serif;
+  --font-content: "Inter", sans-serif;
+  --brown-color: #E26A2D;
+  --red-color: #EB4335;
+  --grey-color: #BFBFBF;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-login {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brown-color);
+}
+
+.logo-login h1 {
+  font-family: var(--font-logo);
+  color: white;
+}
+
+.details-login {
+  width: 50%;
+  font-family: var(--font-content);
+}
+
+.details-login-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 65%;
+}
+
+.details-login-content div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.details-login h2 {
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
+}
+
+.details-login .heading p {
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+}
+
+.details-login form label {
+  font-size: 0.8rem;
+}
+
+.details-login form input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: 1px solid var(--grey-color);
+  margin-top: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.details-login form p a {
+  text-decoration: none;
+  color: var(--brown-color);
+}
+
+.details-login .forget-password {
+  font-size: 0.7rem;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.password-container {
+  position: relative;
+  display: inline-block;
+}
+
+.fa-eye-slash,
+.fa-eye {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.fa-eye-slash:hover,
+.fa-eye:hover {
+  color: #333;
+}
+
+.fa-eye.animate,
+.fa-eye-slash.animate {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.btn {
+  background-color: var(--brown-color);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  width: 100%;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #c95115;
+  transition: 0.3s;
+}
+
+/* Error message styling */
+.error-message {
+  color: var(--red-color);
+  padding: 0.5rem 0;
+  font-size: 0.7rem;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* Input error border */
+.details-login form input.input-error {
+  border-color: var(--red-color);
+}

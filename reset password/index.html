@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="../images/logo.png" alt="fashion logo">
+            <h2>Afristyle</h2>
+        </div>
+        <div class="container">
+            <div class="section-heading">
+                <h3>Reset Password</h3>
+                <p>Set your new password! Make sure your new password is different from your previous password.</p>
+            </div>
+            <div class="row">
+
+                <form id="form">
+                    <div class="input-control">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-box">
+                            <input class="form-input" type="password" id="password">
+                            <i class="fa-regular fa-eye-slash" id="eye-password"></i>
+                            <!-- <i class="fa-regular fa-eye" ></i> -->
+                        </div>
+                    </div>
+                    <div class="input-control">
+                        <label class="form-label " for="confirm-password">Confirm Password</label>
+                        <div class="input-box">
+
+                            <input class="form-input" type="password" id="confirm-password">
+                            <i class="fa-regular fa-eye-slash" id="eye-confirm"></i>
+
+                        </div>
+                        <p class="message"></p>
+                    </div>
+
+                    <button class="btn" type="submit">continue</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
