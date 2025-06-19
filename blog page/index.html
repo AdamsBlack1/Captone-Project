@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AfriStyle Blog Dashboard</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/7ab9b9ccff.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="dashboard-container">
     <aside class="sidebar">
       <div class="logo"><img src="./image/1001278732 1.png"> AfriStyle</div>
 
-        <div class="aside-nav">
-            <ul>
-              <li><i class="ri-function-fill"></i></i> Dashboard</li>
-              <li><i class="ri-shopping-bag-2-fill"></i> Styles</li>
-              <li class="active"><i class="fa-solid fa-book-open"></i> Blogs</li>
-              <li><i class="ri-group-fill"></i> Users</li>
-          </ul>
-          <div class="logout"><i class="ri-logout-box-line"></i> Log out</div>
-        </div>
+      <div class="aside-nav">
+        <ul>
+          <li><i class="ri-function-fill"></i></i> Dashboard</li>
+          <li><i class="ri-shopping-bag-2-fill"></i> Styles</li>
+          <li class="active"><i class="fa-solid fa-book-open"></i> Blogs</li>
+          <li><i class="ri-group-fill"></i> Users</li>
+        </ul>
+        <div class="logout"><i class="ri-logout-box-line"></i> Log out</div>
+      </div>
 
     </aside>
 
     <main class="main-content">
       <header class="main-header">
-        <input class="search-bar" type="text" placeholder="Search blogs, styles, users..."/>
+        <input class="search-bar" type="text" placeholder="Search blogs, styles, users..." />
 
         <div class="header-actions">
-              <i class="fa-regular fa-bell"></i>
-            <span class="admin-avatar">
+          <i class="fa-regular fa-bell"></i>
+          <span class="admin-avatar">
 
-              <img src="./image/Frame 886.png" alt="Admin"/>
+            <img src="./image/Frame 886.png" alt="Admin" />
             <span>
-              Admin<br/>
+              Admin<br />
               <small>adminuser@gmail.com</small>
             </span>
           </span>
@@ -44,24 +46,28 @@
       </header>
       <hr class="h-rule">
       <section class="blogs-section">
-        <h2>Blogs <span class="blog-count">(1245)</span></h2>
+        <h2>Blogs  <span id="blogCount" class="blog-count">(0)</span></h2>
         <div class="blog-tabs">
           <span class="active">All</span>
           <span>Published</span>
           <span>Draft</span>
           <span>Archived</span>
         </div>
-         <hr class="h-rule">
+        <hr class="h-rule">
         <div class="blogs-toolbar">
-          <input class="table-search" placeholder="Search blogs"/>
+          <input class="table-search" placeholder="Search blogs" />
           <div class="toolbar-actions">
             <button><i class="ri-upload-line"></i> Export</button>
             <button><i class="ri-filter-3-line"></i> Filter</button>
-            <button class="add-blog">+ Add Blog</button>
+            <button class="add-blog" id="addBlogBtn">+ Add Blog</button>
           </div>
         </div>
+
+
+
+
         <div class="table-wrapper">
-          <table class="blogs-table">
+          <table id="blogTable" class="blogs-table">
             <colgroup>
               <col class="col1">
               <col class="col2">
@@ -74,202 +80,116 @@
             </colgroup>
             <thead>
               <tr>
-                <th><input type="checkbox"/></th>
+                <th><input type="checkbox" id="selectAll"></th>
                 <th>Title</th>
                 <th>Category</th>
                 <th>Status</th>
                 <th>Last Modified</th>
                 <th>Date Published</th>
                 <th>Views</th>
-                <th>...</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Yo Reddit! What's a small thing that anyone can do...
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-published">Published</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>1025</td>
-                <td><span class="table-menu">&#8942;</span></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Yo Reddit! What's a small thing that anyone can do...
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-archived">Archived</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>967</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Any mechanical keyboard enthusiasts in design?
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-draft">Draft</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>120</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Yo Reddit! What’s a small thing that anyone can do at nearly anytime to improve their mood and make
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-published">Published</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>0</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Understanding color theory: the color wheel and finding complementary colors
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-archived">Archived</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>1</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  The More Important the Work, the More Important the Rest
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-published">Published</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>2</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Any mechanical keyboard enthusiasts in design?
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-draft">Draft</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>467</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Understanding color theory: the color wheel and finding complementary
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-draft">Draft</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>8902</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  How to design a product that can grow itself 10x in year:
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-published">Published</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>673</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  How to design a product that can grow itself 10x in year:
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-published">Published</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>652</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  The More Important the Work, the More Important the Rest
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-draft">Draft</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>9023</td>
-                <td class="table-options">⋮</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"/></td>
-                <td class="truncate">
-                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar"/>
-                  Any mechanical keyboard enthusiasts in design?
-                </td>
-                <td>Red Carpet Recap</td>
-                <td><span class="status-badge status-archived">Archived</span></td>
-                <td>15th May, 2023</td>
-                <td>15th May, 2023</td>
-                <td>762</td>
-                <td class="table-options">⋮</td>
-              </tr>
+              <!-- JS will insert rows here -->
             </tbody>
           </table>
         </div>
 
-        <div class="table-footer">
-            <div class="rows-per-page">
-              Rows per Page
-              <select>
-                <option>12</option>
-                <option>24</option>
-                <option>36</option>
-              </select>
-            </div>
-            <div class="pagination">
-              <button>&lt;</button>
-              <button>1</button>
-              <button>2</button>
-              <button>3</button>
-              <button class="active">4</button>
-              <span>...</span>
-              <button>19</button>
-              <button>20</button>
-              <button>&gt;</button>
-            </div>
-            <div class="showing-info">
-              Showing 1 - 12 of 1245
-            </div>
+
+        <!-- <div class="table-footer">
+          <div class="rows-per-page">
+            Rows per Page
+            <select>
+              <option>12</option>
+              <option>24</option>
+              <option>36</option>
+            </select>
           </div>
+          <div class="pagination">
+            <button>&lt;</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="active">4</button>
+            <span>...</span>
+            <button>19</button>
+            <button>20</button>
+            <button>&gt;</button>
+          </div>
+          <div class="showing-info">
+            Showing 1 - 12 of 1245
+          </div>
+        </div> -->
+
+
+
+         <!-- Blog Modal -->
+
+        <div id="blogModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-content-heading">
+              <h2>Add New Blog</h2>
+              <i class="ri-close-line close"></i>
+            </div>
+            <hr class="add-blog-rule">
+            <form id="blogForm">
+              <label class="add-blog-title">Title</label><br>
+              <input type="text" id="title" required><br>
+              <div class="image-upload-container" id="imageUploadContainer">
+                <span id="uploadText">Upload an image</span>
+                <input type="file" id="image" accept="image/*">
+                <img id="imagePreview" src="" alt="Preview" style="display: none;">
+                <button type="button" id="removeImageBtn" class="remove-btn" style="display: none;">
+                  <i class="ri-close-line"></i>
+                </button>
+              </div>
+              <label class="add-blog-title">Category</label><br>
+              <input type="text" id="category" placeholder="Category" required><br>
+              <label class="add-blog-title">Status</label><br>
+              <select id="status">
+                <option value="Published">Published</option>
+                <option value="Draft">Draft</option>
+                <option value="Archived">Archived</option>
+              </select><br>
+              <label class="add-blog-title">Blog Content</label><br>
+              <textarea id="content" required></textarea><br>
+              <input type="number" id="views" placeholder="Views" value="0" readonly><br>
+              <button class="save-blog" type="submit">Save Blog</button>
+            </form>
+          </div>
+        </div>
+
+
+
+<div id="viewModal" class="modal">
+  <div class="view-modal-content">
+      <span class="close-view"><i class="ri-close-line"></i></span>
+
+      <div class="modal-header">
+        <h2 id="viewTitle"></h2>
+        <p id="viewCategory"></p>
+      </div>
+
+      <div id="viewImageContainer">
+        <img id="viewImage" src="" alt="Blog Thumbnail">
+      </div>
+
+      <div class="modal-body">
+        <p id="viewContent"></p>
+      </div>
+
+      <div class="modal-footer">
+        <p id="viewStatus"></p>
+        <p id="viewModified"></p>
+        <p id="viewViews"></p>
+      </div>
+  </div>
+</div>
+
       </section>
+
+
     </main>
   </div>
 
@@ -277,4 +197,267 @@
 
   <script src="main.js"> </script>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+          <!--
+          <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Yo Reddit! What's a small thing that anyone can do...
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-published">Published</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>1025</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Yo Reddit! What's a small thing that anyone can do...
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-archived">Archived</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>967</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Any mechanical keyboard enthusiasts in design?
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-draft">Draft</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>120</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Yo Reddit! What’s a small thing that anyone can do at nearly anytime to improve their mood and make
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-published">Published</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>0</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Understanding color theory: the color wheel and finding complementary colors
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-archived">Archived</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>1</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  The More Important the Work, the More Important the Rest
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-published">Published</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>2</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Any mechanical keyboard enthusiasts in design?
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-draft">Draft</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>467</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Understanding color theory: the color wheel and finding complementary
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-draft">Draft</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>8902</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  How to design a product that can grow itself 10x in year:
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-published">Published</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>673</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  How to design a product that can grow itself 10x in year:
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-published">Published</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>652</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  The More Important the Work, the More Important the Rest
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-draft">Draft</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>9023</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td class="truncate">
+                  <img src="./image/Frame 886.png" class="author-avatar" alt="avatar" />
+                  Any mechanical keyboard enthusiasts in design?
+                </td>
+                <td>Red Carpet Recap</td>
+                <td><span class="status-badge status-archived">Archived</span></td>
+                <td>15th May, 2023</td>
+                <td>15th May, 2023</td>
+                <td>762</td>
+                <td>
+                  <div class="menu-wrapper">
+                    <button id="btn">⋮</button>
+                    <div class="menu-options">
+                      <button class="edit"><i class="ri-pencil-line"></i> Edit</button>
+                      <button class="delete"><i class="ri-delete-bin-line"></i> Delete</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            -->
